@@ -1,0 +1,38 @@
+<ion-content fullscreen>
+
+  <ion-grid fixed>
+    <ion-row class="ion-padding">
+      <ion-col size="12" style="padding-top: 50px;" >
+        <img src="assets/logo_secure_travel.svg" alt="">
+      </ion-col>
+
+      <ion-col size="12" style="padding-top: 50px;">
+        <ion-item>
+          <ion-label position="stacked">Correo
+          </ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Contraseña
+          </ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-button expand="full" (click)="Login()">
+          Ingresar
+        </ion-button>
+      </ion-col>
+      <ion-col offset="6" size="6 " class="ion-text-end ion-padding">
+        <ion-label color="primary" (click)="Register()">Registrarse</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
