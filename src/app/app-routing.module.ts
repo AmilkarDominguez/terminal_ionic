@@ -17,7 +17,9 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' },
-  { path: 'products', loadChildren: './products/products.module#ProductsPageModule' }
+  { path: 'products', loadChildren: './products/products.module#ProductsPageModule' },  { path: 'business', loadChildren: './business/business.module#BusinessPageModule' },
+  { path: 'tracing', loadChildren: './tracing/tracing.module#TracingPageModule' }
+
 
 
 ];

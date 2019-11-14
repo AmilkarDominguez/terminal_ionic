@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Servicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed class="ion-padding">
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item lines="none" *ngFor="let item of [1,1,1,1,1]; let i = index">
+            <ion-card>
+              <img
+                src="assets/shapes.svg"
+                alt="">
+              <ion-item lines="none">
+                <ion-label color="primary">Titulo {{ i + 1 }}</ion-label>
+                <!-- <ion-icon slot="end" name="more"></ion-icon> -->
+              </ion-item>
+              <ion-card-content class="card-content">
+                <ion-label>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed libero non molestias. Ab quidem
+                  deserunt voluptates, omnis quasi tempore impedit laborum, distinctio velit perferendis asperiores
+                  ratione voluptatum laboriosam suscipit enim.</ion-label>
+                <ion-label>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam veniam esse doloremque, ipsa tenetur repellat dolore nobis repudiandae, ad ipsam voluptatum adipisci voluptate eum fugit corporis hic obcaecati architecto ducimus.</ion-label>
+              </ion-card-content>
+            </ion-card>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
