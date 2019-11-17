@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
   public appPages = [
     {
       title: 'Inicio',
@@ -17,15 +18,30 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Rastreo',
+      url: '/tracing',
+      icon: 'locate'
+    },
+    {
       title: 'Servicios',
       url: '/business',
       icon: 'pricetags'
     },
     {
-      title: 'Rastreo',
-      url: '/tracing',
-      icon: 'locate'
-    }
+      title: 'Buses',
+      url: '/buses',
+      icon: 'bus'
+    },
+    {
+      title: 'Tarjetas de operación',
+      url: '/licenses',
+      icon: 'checkmark-circle'
+    },
+    {
+      title: 'Acerca de',
+      url: '/about',
+      icon: 'information-circle-outline'
+    },
     // {
     //   title: 'List',
     //   url: '/list',

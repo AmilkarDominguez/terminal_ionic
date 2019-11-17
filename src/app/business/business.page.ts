@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiciosService } from '../services/servicios.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-business',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./business.page.scss'],
 })
 export class BusinessPage implements OnInit {
+  
+  servicios : Observable<any>;
 
-  constructor() { }
+  constructor( private serviciosService:ServiciosService ) { }
 
   ngOnInit() {
+    this.servicios = this.serviciosService.getServicios();
   }
 
 }

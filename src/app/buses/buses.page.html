@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Buses</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid fixed class="ion-padding">
+      <ion-row>
+        <ion-col size="12">
+          <ion-list>
+            <ion-item lines="none" *ngFor="let item of buses | async">
+              <ion-card>
+                <img src="http://192.168.0.93:8000{{item.foto}}" />
+                <ion-item lines="none">
+                  <ion-label color="primary">PLACA: {{ item.placa }}</ion-label>
+                  <!-- <ion-icon slot="end" name="more"></ion-icon> -->
+                </ion-item>
+                <ion-card-content class="card-content">
+                  <ion-label><b>Marca: </b>{{ item.marca }}</ion-label>
+                  <ion-label><b>Asientos: </b>{{ item.asientos }}</ion-label>
+                  <ion-label><b>Empresa: </b>{{ item.license.empresa }}</ion-label>
+                </ion-card-content>
+              </ion-card>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

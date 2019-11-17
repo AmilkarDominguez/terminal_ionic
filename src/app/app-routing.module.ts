@@ -4,21 +4,24 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'tracing',
     pathMatch: 'full'
   },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
-  {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  },
   { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' },
-  { path: 'products', loadChildren: './products/products.module#ProductsPageModule' },  { path: 'business', loadChildren: './business/business.module#BusinessPageModule' },
-  { path: 'tracing', loadChildren: './tracing/tracing.module#TracingPageModule' }
+
+
+  
+  { path: 'business', loadChildren: './business/business.module#BusinessPageModule' },
+  { path: 'tracing', loadChildren: './tracing/tracing.module#TracingPageModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
+  { path: 'buses', loadChildren: './buses/buses.module#BusesPageModule' },
+  { path: 'licenses', loadChildren: './licenses/licenses.module#LicensesPageModule' }
+
 
 
 
