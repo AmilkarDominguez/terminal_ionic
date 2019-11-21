@@ -9,6 +9,6 @@ export class BusesService {
   constructor( private http: HttpClient ) { }
 
   getBuses(){
-    return this.http.get('http://192.168.0.93:8000/api/buses');
+    return this.http.get('http://localhost:8000/api/buses');
   }
 }

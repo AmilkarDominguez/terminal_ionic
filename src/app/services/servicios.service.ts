@@ -8,6 +8,6 @@ export class ServiciosService {
   constructor( private http: HttpClient ) { }
 
   getServicios(){
-    return this.http.get('http://192.168.0.93:8000/api/servicios');
+    return this.http.get('http://localhost:8000/api/servicios');
   }
 }

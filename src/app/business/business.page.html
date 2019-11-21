@@ -14,7 +14,7 @@
         <ion-list>
           <ion-item lines="none" *ngFor="let item of servicios | async">
             <ion-card>
-              <img src="http://192.168.0.93:8000{{item.logo}}" />
+              <img src="http://localhost:8000{{item.logo}}" />
               <ion-item lines="none">
                 <ion-label color="primary">{{ item.servicio }}</ion-label>
                 <!-- <ion-icon slot="end" name="more"></ion-icon> -->

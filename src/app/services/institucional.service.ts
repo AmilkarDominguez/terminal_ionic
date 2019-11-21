@@ -9,6 +9,6 @@ export class InstitucionalService {
   constructor( private http: HttpClient ) { }
 
   getInstitucional(){
-    return this.http.get('http://192.168.0.93:8000/api/institucional');
+    return this.http.get('http://localhost:8000/api/institucional');
   }
 }
