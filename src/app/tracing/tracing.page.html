@@ -13,47 +13,107 @@
     <ion-row>
       <ion-col size="12">
         <ion-item>
-          <ion-input placeholder="Código de viaje"></ion-input>
+          <ion-input placeholder="Código de viaje" type="text" [(ngModel)]="code" id="input"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="12">
-        <ion-button expand="block">
+        <ion-button expand="block" (click)="findTravel()">
           Buscar<ion-icon slot="end" name="search"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
 
+
+
   <div #mapElement class="map"></div>
 
-  
 
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="12">
-          <a onclick="window.open('https://www.google.com/maps/dir//-21.5262952,-64.7290933/@-21.5243256,-64.7334476,15z/data=!4m2!4m1!3e0','_system');">Link</a>
-      </ion-col>
-      <ion-col size="12">
-        <ion-list>
-          <ion-list-header>
-            <ion-label>Información de viaje</ion-label>
-          </ion-list-header>
-          <ion-item>
-            <ion-label>
-              Código:
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              Partida:
-            </ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+
+  <div *ngIf="travel != undefined">
+    <!-- Bienvenido {{ travel["code"] }} -->
+
+
+
+
+
+    <ion-col size="12">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Información de viaje</ion-label>
+        </ion-list-header>
+        <ion-item>
+
+          <ion-input placeholder="URL" type="text" [(ngModel)]="url"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="openGoogle()" expand="block" fill="clear" shape="round">
+            Ver en Google Maps
+          </ion-button>
+          <!-- <a
+              onclick="window.open('https://www.google.com/maps/dir//-21.5262952,-64.7290933/@-21.5243256,-64.7334476,15z/data=!4m2!4m1!3e0','_system');">Link</a> -->
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Código: {{ travel["code"]  }}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Partida: {{ travel["salida"] }}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Llegada prevista: {{ travel["llegada"] }}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Vigencia: {{ travel["estado"] }}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Latidud: {{ travel["latitud"] }}
+
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Longitud: {{ travel["longitud"] }}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Origen: {{ travel.origen.nombre }}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Destino: {{ travel.destino.nombre }}
+          </ion-label>
+        </ion-item>
+        <ion-list-header>
+          <ion-label color="primary">Información de BUS</ion-label>
+        </ion-list-header>
+        <ion-item>
+            <img src="{{env.API_URL_IMAGE}}{{ travel.bus.foto }}" />
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Placa de Bus: {{ travel.bus.placa }}
+          </ion-label>
+        </ion-item>
+
+
+      </ion-list>
+    </ion-col>
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="findTravel()">
     <ion-fab-button color="success">
       <ion-icon name="refresh"></ion-icon>
     </ion-fab-button>

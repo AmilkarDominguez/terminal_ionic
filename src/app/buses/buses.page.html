@@ -14,7 +14,7 @@
         <ion-list>
           <ion-item lines="none" *ngFor="let item of buses | async">
             <ion-card>
-              <img src="http://localhost:8000{{item.foto}}" />
+              <img src="{{env.API_URL_IMAGE}}{{item.foto}}" />
               <ion-item lines="none">
                 <ion-label color="primary">PLACA: {{ item.placa }}</ion-label>
                 <!-- <ion-icon slot="end" name="more"></ion-icon> -->

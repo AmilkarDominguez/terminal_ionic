@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BusesService } from '../services/buses.service';
 import { Observable } from 'rxjs';
+import { EnvService } from '../services/env.service';
 
 @Component({
   selector: 'app-buses',
@@ -11,7 +12,10 @@ export class BusesPage implements OnInit {
 
   buses : Observable<any>;
 
-  constructor( private busesService:BusesService ) { }
+  constructor( 
+    private busesService:BusesService,
+    public env: EnvService 
+  ) { }
 
   ngOnInit() {
     this.buses = this.busesService.getBuses();
